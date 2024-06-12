@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-    --primary-color: #6D214F; /* Dark Purple */
+    --primary-color: #6D214F; 
     --secondary-color: #FFD700; /* Gold */
     --background-color: #E5E5E5; /* Light Gray */
     --text-color: #333333; /* Dark Gray */
@@ -10,6 +10,7 @@
     --accent-light-color: #FFFFFF; /* White */
     --border-radius: 12px;
 }
+
 
 * {
     font-family: 'Rubik', sans-serif;
@@ -64,15 +65,17 @@ section {
     border-radius: var(--border-radius);
     background-color: var(--primary-color);
     cursor: pointer;
-    color: var(--background-color);
+    color: var(--accent-light-color);
     font-size: 1.8rem;
     padding: 1rem 3rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    font-weight: 500;
 }
 
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary-color);
 }
 
 .header {
@@ -97,6 +100,7 @@ section {
     color: var(--primary-color);
     font-weight: bold;
 }
+
 
 .header .flex .navbar a {
     margin-left: 2rem;
@@ -241,6 +245,10 @@ section {
     text-align: center;
     font-size: 3.6rem;
     color: var(--text-color);
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    animation: fadeIn 1s ease-out forwards;
+
 }
 
 .section-heading span {
@@ -337,7 +345,7 @@ section {
 }
 
 .instructors-section .instructor-slide .social-share a:hover {
-    background-color: var(--primary-color); /* Change background color on hover */
+    background-color: var(--primary-color); 
     color: var(--background-color);
 }
 
@@ -404,12 +412,22 @@ section {
     width: 100%;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    border-radius: var(--border-radius);
-    background-color: var(--accent-light-color);
     font-size: 1.8rem;
-    color: var(--text-color);
     padding: 1.4rem;
     text-transform: none;
+    border: 1px solid var(--muted-text-color);
+    border-radius: var(--border-radius);
+    background-color: var(--accent-light-color);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+
+}
+
+.input-box:focus {
+    border-color: var(--primary-color);
+    background-color: var(--background-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(88, 40, 90, 0.2);
 }
 
 .contact-section .row form span {
@@ -438,18 +456,31 @@ section {
     border-radius: 50%;
     font-size: 22px;
     color: var(--text-color);
-    display: inline-block; /* Ensures the anchor tags have block-level properties */
-    width: 48px; /* Adjust the width and height to create a circular shape */
+    display: inline-block; 
+    width: 48px; 
     height: 48px;
-    line-height: 48px; /* Vertically centers the icon */
-    text-align: center; /* Horizontally centers the icon */
-    background-color: transparent; /* Set background color to transparent */
+    line-height: 48px; 
+    text-align: center; 
+    background-color: var(--background-color); 
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-section .share a:hover {
-    background-color: var(--primary-color); /* Change background color on hover */
-    color: var(--background-color); /* Change text color on hover */
+    background-color: var(--primary-color); 
+    color: var(--background-color); 
+}
+
+
+
+a {
+    color: var(--muted-text-color);
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
 
@@ -466,6 +497,7 @@ section {
         font-size: 12px;
     }
 }
+
 
 @media (max-width: 768px) {
     #menu-btn {
@@ -528,11 +560,11 @@ section {
 
 @media (max-width: 450px) {
     html {
-        font-size: 50%;
+        font-size: 53.5%;
     }
 
     .section-heading {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
 
     .footer-section .credit {
@@ -541,6 +573,9 @@ section {
 }
 
 @media (max-width: 405px) {
+    html {
+        font-size: 52.5%;
+    }
     .counter-section .box-container {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
@@ -603,5 +638,18 @@ section {
         font-size: 12px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
